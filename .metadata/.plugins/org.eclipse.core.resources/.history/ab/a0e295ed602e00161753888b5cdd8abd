@@ -1,0 +1,109 @@
+import java.util.Arrays;
+
+
+public class Codon 
+{
+	private double[] vars;
+	private double coeficient;
+	private double max;
+	private double min;
+	private int len;
+	private int inMax;
+	private int inMin;
+	public Codon(int len, int max, int min) 
+	{
+		setInMin(min);
+		setInMax(max);
+		this.setLen(len);
+		vars = new double[len];
+		for (int j = 0; j < vars.length; j++) {
+			vars[j] = 2 * Math.random() - 1;
+		}
+
+		coeficient = 2*Math.random() - 1;
+		int [] big = new int[len];
+		for (int i = 0; i < big.length; i++)
+		{
+			big[i] = inMax;
+		}
+		double extremeB = getValue(big);
+		int [] small = new int[len];
+		for (int i = 0; i < small.length; i++)
+		{
+			small[i] = inMin;
+		}
+		double extremeS = getValue(small);
+		if (extremeB > extremeS)
+		{
+			setMax(extremeB);
+			setMin(extremeS);
+		}
+		else
+		{
+			setMin(extremeB);
+			setMax(extremeS);
+		}
+	}
+	public Codon(String info)
+	{
+		String[] inf = info.split("_");
+		vars = fromString(inf[0]);
+		min = Double.parseDouble(inf[1]);
+		max = Double.parseDouble(inf[2]);
+		coeficient = Double.parseDouble(inf[3]);
+	}
+	private double[] fromString(String string) {
+	    String[] strings = string.replace("[", "").replace("]", "").split(", ");
+	    double[] result = new double[strings.length];
+	    for (int i = 0; i < result.length; i++) {
+	      result[i] = Double.parseDouble(strings[i]);
+	    }
+	    return result;
+	}
+	public double getValue(int[] values)
+	{
+		int ans = 1;
+		for (int i = 0; i < values.length; i++)
+		{
+			double a = vars[i];
+			int b = values[i];
+			ans *= Math.pow(values[i], vars[i]) ;
+		}
+		return coeficient * ans;
+	}
+	public double getMax() {
+		return max;
+	}
+	public void setMax(double max) {
+		this.max = max;
+	}
+	public double getMin() {
+		return min;
+	}
+	public void setMin(double min) {
+		this.min = min;
+	}	
+	public String toString()
+	{
+		return "" + Arrays.toString(vars) + "_" + min + "_" + max + "_" + coeficient;
+	}
+	public int getLen() {
+		return len;
+	}
+	public void setLen(int len) {
+		this.len = len;
+	}
+	public int getInMax() {
+		return inMax;
+	}
+	public void setInMax(int inMax) {
+		this.inMax = inMax;
+	}
+	public int getInMin() {
+		return inMin;
+	}
+	public void setInMin(int inMin) {
+		this.inMin = inMin;
+	}
+}
+

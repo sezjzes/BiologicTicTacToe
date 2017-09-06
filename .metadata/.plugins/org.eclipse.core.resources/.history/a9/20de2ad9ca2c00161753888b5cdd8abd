@@ -1,0 +1,9 @@
+
+public class Teach {
+
+	public static void main(String[] args) {
+		TicTacToeBiom a = new TicTacToeBiom("/Users/python/Google Drive/PythonSzczesniakJosh/BiologicTicTacToe/BiologicTicTacToe/1", true);
+		a.learn();
+	}
+
+}

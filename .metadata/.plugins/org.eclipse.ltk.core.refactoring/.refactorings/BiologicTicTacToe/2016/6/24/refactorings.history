@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;PureRandomAI.myPiece&apos; in &apos;PureRandomAI&apos;&#x0A;- Original project: &apos;BiologicTicTacToe&apos;&#x0A;- Original element: &apos;PureRandomAI.myPiece&apos;&#x0A;- Getter method name: &apos;getMyPiece&apos;&#x0A;- Setter method name: &apos;setMyPiece&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;myPiece&apos;" flags="589830" getter="getMyPiece" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;{PureRandomAI.java[PureRandomAI^myPiece" insertion="1" setter="setMyPiece" stamp="1465228226304" version="1.0" visibility="1"/>
+</session>
